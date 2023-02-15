@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+</head>
+
+<body>
+    <script>
+
+        // Solicita a entrada do usuário via teclado
+        let entradaDado = prompt("Digite um dado: ");
+
+        // Pergunta se o usuário deseja verificar o tipo do dado informado
+        let verificar = confirm("Deseja verificar o tipo do dado informado?");
+
+        if (verificar) 
+        {
+            //parseInt converte o dado digitado para inteiro
+            let numero = parseInt(entradaDado);
+            
+            // Verifica o tipo do dado informado
+            if (typeof numero === "number" && !isNaN(numero)) 
+            {
+                let f = parseFloat(entradaDado);
+                // Verifica se é um float
+                if (f % 1 !== 0) {
+                    document.write("O dado informado é um float.");
+                }
+                // Verifica se é um int
+                else 
+                {
+                    document.write("O dado informado é um int.");
+                }
+            }
+            //Verifica se é uma string
+            else if (typeof entradaDado=== "string") 
+            {
+                //Verifica se é um boolean
+                if (entradaDado=== "true" || entradaDado === "false") 
+                {
+                    document.write("O dado informado é um boolean.");
+                }
+                // Verifica se é somente uma string
+                else
+                {
+                    document.write("O dado informado é uma string.");
+
+                }
+            }
+            //Verifica e imprime se não é um float, int, string ou boolean
+            else 
+            {
+                document.write("O dado informado não é um float, int, string ou boolean.");
+            }
+        }
+        //Imprime essa mensagem se o usuário não quiser verificar o tipo de dado informado
+        else 
+        {
+            document.write("Obrigado por visitar esta página.");
+        }
+    </script>
+</body>
+
+</html>

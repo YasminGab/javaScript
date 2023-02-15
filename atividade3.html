@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+</head>
+
+<body>
+    <script>
+
+        // Solicitar um número inteiro positivo ao usuário
+        let numero = prompt("Digite um número inteiro positivo:");
+
+        // Verificar se o número é válido, ou seja inteiro positivo, não nulo (!=null) e que não seja uma string vazia (!== ""), tem que ser um inteiro (parseInt) e maior que zero
+        if (numero !== null && numero !== "" && !isNaN(numero) && parseInt(numero) === parseFloat(numero) && parseInt(numero) > 0) 
+        {
+            // Converter o número de string para inteiro
+            numero = parseInt(numero);
+
+            // Verificar se o número é par ou ímpar e mostrar em uma janela de alerta
+            if (numero % 2 === 0) 
+            {
+                alert("O número " + numero + " é par.");
+            } 
+            else 
+            {
+                alert("O número " + numero + " é ímpar.");
+            }
+        }
+        else 
+        {
+            // Mensagem de erro se o número não for válido
+            alert("Por favor, digite um número inteiro positivo válido!");
+        }
+    </script>
+</body>
+
+</html>
