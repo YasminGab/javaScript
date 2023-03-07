@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3: palíndromo - 28/02/23</title>
+</head>
+
+<body>
+
+    <label for="texto">Digite uma palavra ou frase:</label>
+    <input type="text" id="texto">
+    <button onclick="verificarPalindromo()">Verificar</button>
+    <script>
+        function verificarPalindromo()
+         {
+            let texto = document.getElementById("texto").value.replace(/[^A-Za-z0-9]/g, ""); // Obtem o valor do campo de texto e remover caracteres que não são letras ou números
+            texto = texto.toLowerCase(); // todas as letras torna-se minúsculas 
+            let textoInvertido = texto.split("").reverse().join(""); // a string é invetida
+
+            if (texto === textoInvertido)           // Verifica se a string original é igual a sua versão invertida
+            {
+                alert(`"${texto}" é um palíndromo!`);
+            } 
+            else 
+            {
+                alert(`"${texto}" não é um palíndromo.`);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

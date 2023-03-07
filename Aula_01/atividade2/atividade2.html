@@ -4,22 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade 2</title>
+    <title>Atividade 02: número primo - 14/02/23</title>
 </head>
 <body>
     <script>
-        // solicita um número inteiro positivo ao usuário
             let numero = prompt("Digite um número inteiro positivo: ");
 
-            // parseInt converte o número digitado para inteiro
-            numero = parseInt(numero);
+            numero = parseInt(numero); // parseInt converte o número digitado para inteiro
 
-            // verifica se o número é válido ou seja um inteiro positivo
-            if (Number.isInteger(numero) && numero > 1)
+            if (Number.isInteger(numero) && numero > 1) // verifica se o número é válido ou seja um inteiro positivo
              {
-                let numeroPrimo = true;
-
-                // verifica se o número é primo
+                let numeroPrimo = true; // verifica se o número é primo
+                
                 for (let i = 2; i < numero; i++) 
                 {
                     if (numero % i === 0) 
@@ -28,8 +24,7 @@
                         break;
                     }
                 }
-
-                // exibe o resultado em uma janela de alerta
+                
                 if (numeroPrimo) 
                 {
                     alert(numero + " é um número primo! ");
@@ -42,7 +37,6 @@
             }
             else 
             {
-                // exibe uma mensagem de erro se o número não for válido
                 alert("Por favor, digite um número inteiro positivo válido! ");
             }
 

@@ -5,32 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade 4</title>
+    <title>Atividade 02: fatorial - 14/02/23</title>
 </head>
 
 <body>
     <script>
 
-        // Solicita ao usuário um número inteiro positivo
         let numero = parseInt(prompt("Digite um número inteiro positivo: "));
-
-        // Verifica se o número é válido (maior que 0 e número inteiro)
-        if (numero > 0 && parseInt(numero))
+        
+        if (numero > 0 && parseInt(numero)) // Verifica se o número é válido (maior que 0 e número inteiro)
         {
-            //Realiza o cálculo fatorial do número
-
-            let fatorial = 1;
+            
+            let fatorial = 1; //Realiza o cálculo fatorial do número
             for (let i = 1; i <= numero; i++) 
             {
                 fatorial *= i;
             }
-            //Exibe o resultado em uma janela de alerta
             alert("O fatorial de " + numero + " é " + fatorial);
         }
 
         else
         {
-            //Exibe o erro em uma janela de alerta
             alert("Por favor, digite um número inteiro positivo válido!");
         }
 

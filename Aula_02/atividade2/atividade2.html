@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2: Relógio  - 28/02/23</title>
+</head>
+
+<body>
+    <!-- Tenho que colocar o <span> antes do <scrip> porque no script é usado a função document.getElementById("horario") 
+        para atualizar o conteúdo desse elemento HTML com o horário atual. 
+        Se colocar depois do <script> o navegador não irá encontrar  o elemento HTML quando o script é executado-->
+     <p> Horário atual: <span id="horario"></span></p>
+
+    <Script>
+
+        function atualizarHorario() 
+        {
+            const atual = new Date();
+            const horas = atual.getHours().toString().padStart(2, '0'); //parStart adicona o caracter informado "0" na string até atingir o tamanho informado "2"
+            const minutos = atual.getMinutes().toString().padStart(2, '0');
+            const segundos = atual.getSeconds().toString().padStart(2, '0');
+            const horario = `${horas}:${minutos}:${segundos}`; //interpolação de string
+            document.getElementById("horario").innerHTML = horario; // atualiza o horário na tela
+            setTimeout(atualizarHorario, 1000); // chama a função novamente após 1 segundo
+            //O método setTimeout() é uma função JavaScript que permite executar um bloco de código após um determinado intervalo de tempo. 
+            //O método recebe dois parâmetros: uma função que será executada e o tempo
+        }
+
+        atualizarHorario();
+    </Script>
+    
+</body>
+</html>
