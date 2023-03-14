@@ -5,60 +5,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style41.css">
     <title>Atividade 1: Fomulário - 08/03/23 </title>
 </head>
 
 <body>
 
-    <h1>Selecione o tipo de cadastro:</h1>
+    <div>
+        <h1>Selecione o tipo de cadastro</h1>
+    </div>
+    <div class="centro">
+        <div class="formulario">
+            <div class="radio">
+                <input type="radio" name="tipoCadastro" value="professor">Professor</input>
+                <input type="radio" name="tipoCadastro" value="aluno">Aluno</input>
+            </div>
 
-    <input type="radio" name="tipoCadastro" value="professor">Professor</input>
-    <input type="radio" name="tipoCadastro" value="aluno">Aluno</input>
 
-    <form id="formCadastro">
-        <label>Nome:</label>
-        <input type="text" name="nome" required>
-        <br>
+            <form id="formCadastro">
 
-        <label>E-mail:</label>
-        <input type="email" name="email" required>
-        <br>
+                <label>Nome:</label>
+                <input type="text" name="nome" required>
+                <br>
 
-        <label>Data de Nascimento:</label>
-        <input type="date" name="dataNascimento" required>
-        <br>
+                <label>E-mail:</label>
+                <input type="email" name="email" required>
+                <br>
 
-        <label>Telefone Fixo:</label>
-        <input type="tel" name="telefoneFixo">
-        <br>
 
-        <label>Telefone Celular:</label>
-        <input type="tel" name="telefoneCelular" required>
-        <br>
+                <label>Data de Nascimento:</label>
+                <input type="date" name="dataNascimento" required>
+                <br>
 
-        <label>Matrícula:</label>
-        <input type="text" name="matricula">
-        <br>
+                <label>Telefone Fixo:</label>
+                <input type="tel" name="telefoneFixo">
+                <br>
 
-        <div id="camposProfessor" style="display:none;">
-            <label>Área de Atuação:</label>
-            <input type="text" name="areaAtuacao">
-            <br>
+                <label>Telefone Celular:</label>
+                <input type="tel" name="telefoneCelular" required>
+                <br>
 
-            <label>Lattes:</label>
-            <input type="url" name="lattes">
-            <br>
+
+                <label>Matrícula:</label>
+                <input type="text" name="matricula">
+                <br>
+
+                <div id="camposProfessor" style="display:none;">
+                    <label>Área de Atuação:</label>
+                    <input type="text" name="areaAtuacao">
+                    <br>
+
+                    <label>Lattes:</label>
+                    <input type="url" name="lattes">
+                    <br>
+                </div>
+
+                <div id="camposAluno" style="display:none;">
+                    <label>Curso:</label>
+                    <input type="text" name="curso">
+                    <br>
+                </div>
+
+                <div class="botao">
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Redefinir">
+                </div>
+            </form>
+
         </div>
-
-        <div id="camposAluno" style="display:none;">
-            <label>Curso:</label>
-            <input type="text" name="curso">
-            <br>
-        </div>
-
-        <input type="submit" value="Enviar">
-        <input type="reset" value="Redefinir">
-    </form>
+    </div>
 
     <script>
         var tipoCadastro = document.getElementsByName("tipoCadastro");
@@ -66,16 +81,12 @@
         var camposProfessor = document.getElementById("camposProfessor");
         var formCadastro = document.getElementById("formCadastro");
 
-        for (var i = 0; i < tipoCadastro.length; i++) 
-        {
-            tipoCadastro[i].addEventListener('change', function () 
-            {
-                if (this.value == 'aluno') 
-                {
+        for (var i = 0; i < tipoCadastro.length; i++) {
+            tipoCadastro[i].addEventListener('change', function () {
+                if (this.value == 'aluno') {
                     camposAluno.style.display = "block";
                     camposProfessor.style.display = "none";
-                } else if (this.value == 'professor') 
-                {
+                } else if (this.value == 'professor') {
                     camposAluno.style.display = "none";
                     camposProfessor.style.display = "block";
                 }
