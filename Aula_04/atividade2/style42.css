@@ -1,0 +1,53 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+
+
+*{
+    margin: 10px;
+    padding: 12px;
+    box-sizing: border-box;
+    background-color: #B8D8E0;
+    text-align: center;
+    font-family: 'Sono', sans-serif;
+    
+}
+
+li {
+    list-style-type: none;
+}
+
+h1{
+    color: #ff2735 ;
+    font-size: 40px;
+}
+
+button{
+    color: #ffff;
+    background-color: #ff2735;
+    border-color: #ff2735;
+    border-width: 2px;
+    border-radius: 10px;
+    
+}
+
+.adicionar{
+    color: #1A3365;
+    border-color: #1A3365;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+input{
+    color: #1A3365;
+    border-color: #1A3365;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.borda{
+    color: #1A3365;
+    font-size: 20px;
+    border: 2px dotted #ff2735;
+
+
+}

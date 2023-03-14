@@ -6,22 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 2: TODO - list - 07/03/23</title>
-    <style>
-            li {
-                list-style-type: none;
-            }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style42.css">
 </head>
 
 <body>
     <h1>Lista de tarefas</h1>
+<div class="adicionar">
     <form>
-        <label for="todo">Adicionar item:</label>
+        <label for="todo">Adicionar item</label>
         <input type="text" id="todo" name="todo">
+
+    <div class="botao">
         <button type="button" onclick="addItem()">Adicionar</button>
+    </div>
+    
     </form>
-    <ul id="todo-list">
-    </ul>
+</div>
+
+<div class="borda">
+    <ul id="todo-list"></ul>
+</div>
+
+
     <script>
         let todos = [];
 
@@ -76,6 +82,8 @@
             todos.forEach((todo, index) => 
             {
                 const listItem = document.createElement("li");
+
+                const divLi = document.createElement("div");
                 const text = document.createTextNode(todo.title);
                 const completeCheckbox = document.createElement("input");
                 completeCheckbox.type = "checkbox";
@@ -96,8 +104,9 @@
                     listItem.style.textDecoration = "line-through";
                 }
 
-                listItem.appendChild(completeCheckbox);
-                listItem.appendChild(text);
+                divLi.appendChild(completeCheckbox);
+                divLi.appendChild(text);
+                listItem.appendChild(divLi);
                 listItem.appendChild(removeButton);
                 listItem.appendChild(upButton);
                 listItem.appendChild(downButton);
