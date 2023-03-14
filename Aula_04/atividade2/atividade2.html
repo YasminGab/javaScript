@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2: TODO - list - 07/03/23</title>
+    <style>
+            li {
+                list-style-type: none;
+            }
+    </style>
+</head>
+
+<body>
+    <h1>Lista de tarefas</h1>
+    <form>
+        <label for="todo">Adicionar item:</label>
+        <input type="text" id="todo" name="todo">
+        <button type="button" onclick="addItem()">Adicionar</button>
+    </form>
+    <ul id="todo-list">
+    </ul>
+    <script>
+        let todos = [];
+
+        function addItem() 
+        {
+            const todoInput = document.getElementById("todo"); 
+            const todoText = todoInput.value;
+            const todo = { title: todoText, completed: false };
+            todos.push(todo);
+            todoInput.value = "";
+            render();
+        }
+
+        function removeItem(index)
+        {
+            todos.splice(index, 1); //altera o contéudo do array
+            render();
+        }
+
+        function moveItemUp(index) // moveItemUp permite que o usuário mova um item da lista para cima
+        {
+            if (index > 0) 
+            {
+                const todo = todos[index];
+                todos.splice(index, 1);
+                todos.splice(index - 1, 0, todo);
+                render();
+            }
+        }
+
+        function moveItemDown(index) 
+        {
+            if (index < todos.length - 1) 
+            {
+                const todo = todos[index];
+                todos.splice(index, 1);
+                todos.splice(index + 1, 0, todo);
+                render();
+            }
+        }
+
+        function toggleComplete(index) 
+        {
+            todos[index].completed = !todos[index].completed;
+            render();
+        }
+
+        function render() 
+        {
+            const todoList = document.getElementById("todo-list");
+            todoList.innerHTML = "";
+            todos.forEach((todo, index) => 
+            {
+                const listItem = document.createElement("li");
+                const text = document.createTextNode(todo.title);
+                const completeCheckbox = document.createElement("input");
+                completeCheckbox.type = "checkbox";
+                completeCheckbox.checked = todo.completed;
+                completeCheckbox.onclick = () => toggleComplete(index);
+                const removeButton = document.createElement("button");
+                removeButton.innerText = "Remover";
+                removeButton.onclick = () => removeItem(index);
+                const upButton = document.createElement("button");
+                upButton.innerText = "Priorizar";
+                upButton.onclick = () => moveItemUp(index);
+                const downButton = document.createElement("button");
+                downButton.innerText = "Descer";
+                downButton.onclick = () => moveItemDown(index);
+
+                if (todo.completed)
+                {
+                    listItem.style.textDecoration = "line-through";
+                }
+
+                listItem.appendChild(completeCheckbox);
+                listItem.appendChild(text);
+                listItem.appendChild(removeButton);
+                listItem.appendChild(upButton);
+                listItem.appendChild(downButton);
+                todoList.appendChild(listItem);
+            });
+        }
+
+        render();
+
+    </script>
+
+
+</body>
+
+</html>
+
+
+
+</body>
+
+</html>

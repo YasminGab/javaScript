@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2: Objeto - 07/03/23</title>
+</head>
+
+<body>
+
+    <form id="car-form">
+        <label for="marca">Marca: </label>
+        <input type="text" id="marca" name="marca"><br><br>
+    
+        <label for="modelo">Modelo: </label>
+        <input type="text" id="modelo" name="modelo"><br><br>
+    
+        <label for="ano">Ano: </label>
+        <input type="number" id="ano" name="ano"><br><br>
+    
+        <label for="cor">Cor: </label>
+        <input type="text" id="cor" name="cor"><br><br>
+    
+        <label for="kilometragem">Kilometragem: </label>
+        <input type="number" id="kilometragem" name="kilometragem"><br><br>
+    
+        <label for="valor_fipe">Valor Fipe: </label>
+        <input type="number" id="valor_fipe" name="valor_fipe"><br><br>
+    
+        <button type="button" onclick="salvarCarro()">Salvar</button>
+    </form>
+    <br><br>
+    <div id="resultado"></div>
+
+
+    <script>
+
+        let carro;
+
+        function armazenarCarro()
+        {
+            const marca = document.getElementById("marca").value;
+            const modelo = document.getElementById("modelo").value;
+            const ano = document.getElementById("ano").value;
+            const cor = document.getElementById("cor").value;
+            const kilometragem = document.getElementById("kilometragem").value;
+            const valor_fipe = document.getElementById("valor_fipe").value;
+
+            carro = 
+            {
+                marca, modelo, ano, cor, kilometragem, valor_fipe,
+
+                anosUtilizacao() 
+                {
+                    const anos = new Date().getFullYear() - this.ano; // Date().getFullYear retorna o ano atual
+                    return anos;
+                },
+
+                valorMercado()
+                {
+                    let valor_mercado = 0;
+                    const anos = this.anosUtilizacao();
+                    const km_por_ano = this.kilometragem / anos;
+
+                    if (this.kilometragem <= 30000)
+                    {
+                        valor_mercado = this.valor_fipe * 1.1;
+                    }
+                    else if (this.kilometragem > 30000 || this.kilometragem <= 50000 )
+                    {
+                        valor_mercado = this.valor_fipe * 1;
+                    }
+                    else
+                    {
+                        valor_mercado = this.valor_fipe * 0.9;
+                    }
+                    return valor_mercado.toFixed(2);
+                }
+            };
+        }
+
+        function salvarCarro()
+        {
+            armazenarCarro();
+
+            const anos_utilizacao = carro.anosUtilizacao(); 
+            const valor_mercado = carro.valorMercado();
+            const resultado = document.getElementById("resultado");
+            resultado.innerHTML = `Este carro tem ${anos_utilizacao} anos de utilização e seu valor de mercado é R$${valor_mercado}`;
+        }
+
+    </script>
+
+</body>
+</html>

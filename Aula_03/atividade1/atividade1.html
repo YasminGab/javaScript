@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1: Array - 07/03/23 </title>
+</head>
+
+<body>
+
+    <label for="valor">Digite um valor:</label>
+    <input type="text" id="valorDigitado">
+    <button onclick="adicionarLista()">Adicionar</button>
+    <button onclick="apagarLista()">Apagar lista</button>
+
+    <h1>Valores cadastrados:</h1>
+    <ol id="listaValor"></ol>
+
+    <script>
+
+        let listaValor = [];
+
+        function adicionarLista() 
+        { 
+            let valorDigitado = document.getElementById("valorDigitado").value.trim(); //document.getElementById Obtem o valor do elemento digitado pelo usuário (html) com base no valor do atributo id // trim() remove espaços em branco no início e fim
+            if (valorDigitado.length > 0) 
+            {
+                listaValor.push(valorDigitado); //.push permite adicionar um ou mais elementos no array e retorna o novo comprimento
+                listaValor.sort(); // .sort classifica o elemento do array em ordem crescente (por padrão) ou decrescente (tem que colocar uma função de comparação)
+                console.log(listaValor);
+                atualizarListaValores();
+            }
+            else
+            {
+                alert("Por favor, insira um dado na lista!")
+            }
+        }
+
+        function atualizarListaValores() 
+        {
+            let lista = document.getElementById("listaValor");
+            lista.innerHTML = ""; //Limpa a lista antes de recriá-la, evita que o elemento inserido na lista apareça duplicado
+            for (let i = 0; i < listaValor.length; i++) 
+            {
+                let ItemLista = document.createElement("li"); // cria um novo elemento HTML com a tag especificada
+                ItemLista.innerText = listaValor[i];
+                lista.appendChild(ItemLista);
+            }
+        }
+
+        function apagarLista()
+        {
+            listaValor = [];
+            atualizarListaValores();
+        }
+
+    </script>
+</body>
+
+</html>
