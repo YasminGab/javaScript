@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letreiro</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function Letreiro() {
+            const [texto, setTexto] = React.useState("");
+            const [indice, setIndice] = React.useState(0);
+
+            React.useEffect(() => {
+                const mensagem = "Venha estudar na Fatec";
+                if (indice < mensagem.length) {
+                    const timer = setTimeout(() => {
+                        setTexto((textoAnterior) => textoAnterior + mensagem[indice]);
+                        setIndice((indiceAnterior) => indiceAnterior + 1);
+                    }, 200);
+                    return () => clearTimeout(timer);
+                }
+            }, [texto, indice]);
+
+            return <h1>{texto}</h1>;
+        }
+
+        ReactDOM.render(<Letreiro />, document.getElementById("root"));
+
+    </script>
+</body>
+
+</html>

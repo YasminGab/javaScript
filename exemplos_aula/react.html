@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        // const user= {
+        //     firstName: 'Yasmin',
+        //     lastName: 'Oliveira'
+        // };
+
+        // function formatName(user){
+        //     return user.firstName + ' ' + user.lastName;
+        // }
+
+        // const element= <h1>Hello, {formatName(user)}!</h1>; //chama a função formatName e passa o parametro (user)
+        // ReactDOM.render(element,document.getElementById('root'));
+
+        // const name = 'Yasmin';
+        // const element= <h1>Hello, {name}</h1>;
+        // ReactDOM.render(element,document.getElementById('root'));
+
+        // const element= (
+        //     <div>
+        //     <h1>Hello!</h1>
+        //     <h2>Good to see you here.</h2>
+        //     </div>
+        // );
+
+        //Usa o html puro JSX
+        // const element= (
+        //     <h1 className="greeting">
+        //         Hello, world!
+        //     </h1>
+        // );
+
+        //Usa o JavaScrip puro //
+        // const element= React.createElement(
+        //     'h1', //qual o elemento quero criar ex. imagem colocaria img
+        //     {className: 'greeting'}, // entre {} será tudo que quero adicionar atributos css 
+        //     'Hello, world!'
+        // );
+        //ReactDOM.render(element,document.getElementById('root'));
+
+
+        function tick(){
+            const element = (
+                <div>
+                    <h1>Hello, world!</h1>
+                    <h2>It is {new Date().toLocaleTimeString()}.</h2>
+                </div>
+            );
+            ReactDOM.render(element,document.getElementById('root'));
+        }
+        setInterval(tick, 1000);
+
+    </script>
+</body>
+</html>
