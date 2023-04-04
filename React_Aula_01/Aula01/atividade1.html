@@ -18,24 +18,34 @@
     <script type="text/babel">
 
         function Letreiro() {
-            const [texto, setTexto] = React.useState("");
-            const [indice, setIndice] = React.useState(0);
+            const [texto, setTexto] = React.useState(""); //define uma variável de estado para o texto
+            const [indice, setIndice] = React.useState(0); //define uma variável para o índice da letra
 
-            React.useEffect(() => {
-                const mensagem = "Venha estudar na Fatec";
+            React.useEffect(() => { // .useEffect atualiza o texto do letreiro a cada 150ms até que a mensagem inteira tenha sido exibida
+
+                const mensagem = "Venha estudar na Fatec!";
                 if (indice < mensagem.length) {
                     const timer = setTimeout(() => {
-                        setTexto((textoAnterior) => textoAnterior + mensagem[indice]);
-                        setIndice((indiceAnterior) => indiceAnterior + 1);
-                    }, 200);
-                    return () => clearTimeout(timer);
+                        setTexto((textoAnterior) => textoAnterior + mensagem[indice]); //adiciona a letra correspondente ao texto do letreiro 
+                        setIndice((indiceAnterior) => indiceAnterior + 1);  //atualiza o índice
+                    }, 150);
+                    return () => clearTimeout(timer); //limpa o cronômetro para uma função de retorno de chamada que foi configurada com o método setTimeout()
                 }
             }, [texto, indice]);
 
-            return <h1>{texto}</h1>;
+            return (
+                <h1 style={{
+                    color: "#9120bd",
+                    fontFamily: "Roboto Mono",
+                    textAlign: "center",
+                    fontSize: "100px"
+                }}>
+                    {texto}
+                </h1>
+            );
         }
 
-        ReactDOM.render(<Letreiro />, document.getElementById("root"));
+        ReactDOM.createRoot(document.getElementById("root")).render(<Letreiro />); //renderiza o componente Letreiro dentro do container "root"
 
     </script>
 </body>
