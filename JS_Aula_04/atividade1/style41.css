@@ -2,50 +2,80 @@
 
 *{
     font-family:'Open Sans', sans-serif;
-    margin: 10px;
-    background-color: #f0f5f2;
+    color: black;
 
 }
 
-body{
+
+body {
+    background-color: #d3bcf6;
+    color: #bc98f3;
+    font-family: Arial, sans-serif;
+  }
+  
+  .centro {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    height: 80vh;
+  }
+  
+  .formulario {
+    background-color: #bc98f3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .formulario label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .formulario input[type="text"],
+  .formulario input[type="email"],
+  .formulario input[type="date"],
+  .formulario input[type="tel"],
+  .formulario input[type="url"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .formulario input[type="submit"],
+  .formulario input[type="reset"] {
+    padding: 5px 20px;
+    background-color: #fff;
+    color: #bc98f3;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .formulario input[type="submit"]:hover,
+  .formulario input[type="reset"]:hover {
+    background-color: #fa34df;
+    color: #fff;
+  }
+  
+  #camposProfessor,
+  #camposAluno {
+    display: none;
+  }
+  
+  .radio {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .radio input[type="radio"] {
+    margin-right: 10px;
+  }
+
+  h1{
     text-align: center;
-}
-
-.formulario{
-    display:table-caption; 
-    color: #006270;
-    
-}
-
-.radio{
-    color: #006270;
-}
-
-label{
-    color: #006270;
-    border-radius: 5px;
-    border-color: #006270;
-    
-}
-
-input{
-    color: #006270;
-    border-radius: 5px;
-    font-size: 18px;
-    
-}
-
-h1{
-    color: #006270;
-}
-
-.botao{
-    color: #006270;
-    border-radius: 5px;
-    font-size: 18px;
-}
-
-.centro{
-    display:initial;
-}
+  }
+  

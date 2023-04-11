@@ -1,53 +1,51 @@
 
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
-
-
 *{
-    font-family: 'Montserrat', sans-serif;
-    margin: 5px;
-    background-color: #e8f5ff;
-    font-size: 15px;
-    padding: 0;
-    font-weight: bold;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-form{
-    color: #014ba0;
-    border-radius: 5px;
-    display: block;
-}
-
-input{
-    border-color: #014ba0;
-    border-radius: 5px;
-    font-size: 18px;
-    height: 30px;
-}
-
-button{
-    color: #ffff;
-    background-color: #014ba0;
-    border-radius: 5px;
-    border-color: #014ba0;
-
-}
-
-label{
-    color:#014ba0;
-    display: flex;
-}
+body {
+    background-color: #afcdea;
+  }
 
 h1{
-    color: #014ba0;
-    font-size: 30px;
+    text-align: center;
 }
-
-#resultado{
-    color: #014ba0;
-    margin-bottom: 90px;
-}
-
-.formulario{
-    display:block;
+  
+  .formulario {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-}
+    background-color: #def7ff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+  }
+  
+  label {
+    color: #2f2c79;
+  }
+  
+  input {
+    background-color: #def7ff;
+    color: #2f2c79;
+    border-bottom: solid #2f2c79;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  button {
+    background-color: #2f2c79;;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #9d4edd;
+  }
+  
